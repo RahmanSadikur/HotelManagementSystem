@@ -1,0 +1,15 @@
+#Hotem management...
+
+There are many hotels in a country. Each hotel is indentified by its hotel_id,name,location and GID.
+The hotel provieds many rooms. Rooms are identified by room number, roomtype, locked, price, 
+maxpersion. For staying in a room its important to booked the room first. Anyone can also booked a 
+room by online. To booked  in online there must be some online_user, email, username, usermobile.
+Online users can easily manage a room and the booking policy. Online user id, time, booking id,
+checkout, customer id, breakfast, night, arrival, room number, booktype, comments these are the 
+policy of booking a room. Each customer have to booked a room first to check in. Every customer 
+has booking_id, name, address, postcode, city, country, phone, email, registration time. For each 
+booking pay the payment is important. For payment its follows booking_id, customer id, amount,
+paid, time, cancel, invoice. And every payment is done by the customers. A room can be checkout
+by cancelation method. Each booking can be cancel by reservation some details like booktime, 
+cancel time, booking id, customer id, night, breakfast, arrival, room number, checkout.
+Each customer can also do checkout by cancelation.

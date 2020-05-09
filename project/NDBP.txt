@@ -1,0 +1,65 @@
+..1->> create table customer(  nid number(12)primary key,name varchar(20),address varchar(20),payment_id number(10),
+foreign key (payment_id) REFERENCES payment(payment_id),bid number(10), 
+foreign key(bid)references booking(bid),cid number(10),foreign key(cid) references cancel(cid))
+
+insert into customer values(1011,'RONY','BADDA',1,1,1)
+insert into customer values(1013,'RAJON','DHAKA',3,3,3)
+insert into customer values(1012,'EMON','SYLHET',2,2,2)
+insert into customer values(1014,'MAHEDI','COMILLA',4,4,4)
+insert into customer values(1015,'MAHBUB','CHANDPUR',5,5,5)
+
+..2->> create table hotel(hid number(10)constraint h_pk primary key,hname varchar(20),loc varchar(20),
+room_number number(10),constraint h_fk foreign key(room_number) references room(room_number))
+
+insert into hotel values(1212,'A','chittagong',11)
+insert into hotel values(1213,'A','sreemangal',12)
+insert into hotel values(1214,'X','bandarban',13)
+insert into hotel values(1215,'Y','khulna',14)
+insert into hotel values(1216,'Z','dhaka',15)
+
+..3->> create table cancel(cid number(10)primary key,c_time varchar(20),
+room_number number(10),foreign key(room_number)references room(room_number))
+
+insert into cancel values(1,'1pm',14)
+insert into cancel values(2,'4pm',11)
+insert into cancel values(3,'8am',13)
+insert into cancel values(4,'11am,12)
+insert into cancel values(5,'12pm',15)
+
+..4->> create table booking( bid number(10) primary key,booking_time varchar(20),
+room_number number(10),foreign key(room_number) REFERENCES room(room_number))
+
+insert into booking values(1,'10am',11)
+insert into booking values(2,'8am',15)
+insert into booking values(3,'4pm',13)
+insert into booking values(4,'2pm',12)
+insert into booking values(5,'11am',14)
+
+..5->> create table room(room_number number(10)primary key,price number(10),capacity varchar(15))
+
+insert into room values (11,300,'3')
+insert into room values (12,500,'2')
+insert into room values (13,800,'2')
+insert into room values (14,400,'3')
+insert into room values (15,1000,'2')
+
+..6->> create table contact(nid number(12),phone number(12),foreign key(nid) references customer(nid))
+
+insert into contact values(1011,01715682354)
+insert into contact values(1012,01725365891)
+insert into contact values(1013,01753220952)
+insert into contact values(1014,01740236589)
+insert into contact values(1015,01750226589)
+
+..7->> create table payment(payment_id number(10)primary key,amount number(10),type varchar(20))
+
+insert into payment values(1,1000,'card')
+insert into payment values(2,1600,'card')
+insert into payment values(3,500,'cash')
+insert into payment values(4,800,'bkash')
+insert into payment values(5,400,'cash')
+
+
+
+
+

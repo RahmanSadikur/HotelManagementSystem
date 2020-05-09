@@ -1,0 +1,35 @@
+select count(room.room_number) from hotel,room
+where hotel.room_number=room.room_number
+
+2.select * from room where capacity='3'
+
+3.select name,phone from customer,contact
+where customer.nid=contact.nid
+and phone=1753220952
+
+4.select name from customer,booking
+where customer.bid=booking.bid
+and room_number in(11,12)
+
+5.select customer.* from customer,payment
+where customer.payment_id=payment.payment_id
+and amount=(select max(amount) from payment)
+
+6.
+select hname,loc,room.room_number,price from hotel,room
+where hotel.room_number=room.room_number
+and price between 400 and 1000
+7.
+select name from customer,booking
+where customer.bid=booking.bid
+and booking_time='10am'
+8.
+select name from customer,cancel
+where customer.cid=cancel.cid
+and c_time='4pm'
+9.
+select name,payment.* from customer,payment
+where customer.payment_id=payment.payment_id
+10.
+select name,booking.* from customer,booking
+where customer.bid=booking.bid
